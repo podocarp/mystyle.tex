@@ -27,6 +27,7 @@ catchfile
 cleveref
 enumitem
 esint
+esint-type1
 fancyvrb
 float
 framed
