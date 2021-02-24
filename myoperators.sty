@@ -63,18 +63,44 @@
 %%%%% Script and calligraphy letters
 
 % Blackboard bold for certain sets
-\newcommand{\One}{{\mathbbm{1}}}
-\newcommand{\C}{{\mathbbm{C}}}
-\newcommand{\F}{{\mathbbm{F}}}
+\newcommand{\One}{{\mathbf{1}}}
+\newcommand{\C}{{\mathbb{C}}}
+\newcommand{\F}{{\mathbb{F}}}
 \let\H\HH % original was for an accent
 \let\H\relax
-\newcommand{\H}{{\mathbbm{H}}}
-\newcommand{\N}{{\mathbbm{N}}}
-\newcommand{\Q}{{\mathbbm{Q}}}
-\newcommand{\R}{{\mathbbm{R}}}
-\newcommand{\Z}{{\mathbbm{Z}}}
+\newcommand{\H}{{\mathbb{H}}}
+\newcommand{\N}{{\mathbb{N}}}
+\newcommand{\Q}{{\mathbb{Q}}}
+\newcommand{\R}{{\mathbb{R}}}
+\newcommand{\Z}{{\mathbb{Z}}}
 
 % Script for certain operators
+\newcommand{\Acal}{{\mathcal{A}}}
+\newcommand{\Bcal}{{\mathcal{B}}}
+\newcommand{\Ccal}{{\mathcal{C}}}
+\newcommand{\Dcal}{{\mathcal{D}}}
+\newcommand{\Ecal}{{\mathcal{E}}}
+\newcommand{\Fcal}{{\mathcal{F}}}
+\newcommand{\Gcal}{{\mathcal{G}}}
+\newcommand{\Hcal}{{\mathcal{H}}}
+\newcommand{\Ical}{{\mathcal{I}}}
+\newcommand{\Jcal}{{\mathcal{J}}}
+\newcommand{\Kcal}{{\mathcal{K}}}
+\newcommand{\Lcal}{{\mathcal{L}}}
+\newcommand{\Mcal}{{\mathcal{M}}}
+\newcommand{\Ncal}{{\mathcal{N}}}
+\newcommand{\Ocal}{{\mathcal{O}}}
+\newcommand{\Pcal}{{\mathcal{P}}}
+\newcommand{\Qcal}{{\mathcal{Q}}}
+\newcommand{\Rcal}{{\mathcal{R}}}
+\newcommand{\Scal}{{\mathcal{S}}}
+\newcommand{\Tcal}{{\mathcal{T}}}
+\newcommand{\Ucal}{{\mathcal{U}}}
+\newcommand{\Vcal}{{\mathcal{V}}}
+\newcommand{\Wcal}{{\mathcal{W}}}
+\newcommand{\Xcal}{{\mathcal{X}}}
+\newcommand{\Ycal}{{\mathcal{Y}}}
+\newcommand{\Zcal}{{\mathcal{Z}}}
 \newcommand{\Ascr}{{\mathscr{A}}}
 \newcommand{\Bscr}{{\mathscr{B}}}
 \newcommand{\Cscr}{{\mathscr{C}}}
@@ -208,7 +234,11 @@
 
 % Nice convenient partial derivative macros
 % \pdvq{x}{y}{z} returns \qty(\pdv{x}{y})_z
-\newcommand{\pdvq}[3]{{{\qty(\pdv{#1}{#2})}}_{#3}}
+% \pdvqm has a minus sign in the bracket.
+% qdv is more optimal for longer subscripts or superscripts
+\newcommand{\pdvq}[3]{{{\qty(\pdv{#1}{#2})}_{#3}}}
+\newcommand{\pdvqm}[3]{{{\qty(-\pdv{#1}{#2})}_{#3}}}
+\newcommand{\qdv}[2]{{\qty(\pdv{#1}{#2})}}
 
 % Limits with mathclap (only useful for limits under summations for eg. so it
 % does not support superscripts.)

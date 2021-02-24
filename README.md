@@ -16,8 +16,7 @@ If you do not wish to install a 5GB texlive-full package, here is the list of
 minimum dependencies:
 ```
 algorithm2e
-amsmath bbm
-bbm-macros
+amsmath
 biber
 biblatex
 calrsfs
