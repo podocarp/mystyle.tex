@@ -36,6 +36,7 @@ ifoddpage
 import
 latexmk
 lineno
+mathdots
 mathtools
 microtype
 minted

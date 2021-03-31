@@ -20,6 +20,7 @@
 \newcommand{\vn}{{\vunit{n}}}
 
 % Generic things
+\DeclareMathOperator{\coker}{coker}
 \DeclareMathOperator{\dom}{dom}
 \DeclareMathOperator{\ran}{ran}
 \let\ker\relax
@@ -43,10 +44,14 @@
 \DeclareMathOperator{\SL}{{\bf SL}}
 \let\hom\relax
 \DeclareMathOperator{\aut}{Aut}
+\DeclareMathOperator{\ann}{Ann}
+\def\endo{\operatorname{End}} % this has to be done like so, it is not a mistake
 \DeclareMathOperator{\hom}{Hom}
 \DeclareMathOperator{\inn}{Inn}
+\DeclareMathOperator{\mat}{Mat}
 \DeclareMathOperator{\mor}{Mor}
 \DeclareMathOperator{\out}{Out}
+\DeclareMathOperator{\tor}{Tor}
 
 \newcommand{\sub}{\mathbf{Sub}}
 \newcommand{\set}{{\mathbf{Set}}}
@@ -242,9 +247,9 @@
 
 % Limits with mathclap (only useful for limits under summations for eg. so it
 % does not support superscripts.)
-\def\lc_#1{\limits_{\mathclap{#1}}}
+% \def\lc_#1{\limits_{\mathclap{#1}}}
 % Limits with mathclap and substack
-\def\lcs_#1{\limits_{\mathclap{\substack{#1}}}}
+\def\lc_#1{\limits_{\mathclap{\substack{#1}}}}
 
 % Nice convenient infinite sums
 \newcommand{\sumzeroinf}[1]{{\sum_{{#1}=0}^\infty}}
@@ -259,27 +264,30 @@
 % Commands with x default to x, otherwise it lets you specify the object
 \def\lxoneton{\lof[x]{1}{2}{n}}
 \def\sxoneton{\{\lxoneton\}}
-\def\lxzeroton{\lof[x]{0}{2}{n}}
+\def\lxzeroton{\lof[x]{0}{1}{n}}
 \def\sxzeroton{\{\lxzeroton\}}
 \newcommand{\lxoneto}[1]{\lof[x]{1}{2}{#1}}
 \newcommand{\sxoneto}[1]{\{\lxoneton{#1}\}}
-\newcommand{\lxzeroto}[1]{\lof[x]{0}{2}{#1}}
+\newcommand{\lxzeroto}[1]{\lof[x]{0}{1}{#1}}
 \newcommand{\sxzeroto}[1]{\{\lxzeroton{#1}\}}
 
 \newcommand{\loneton}[1]{\lof[#1]{1}{2}{n}}
-\newcommand{\soneton}[1]{\{\lxoneton{#1}\}}
-\newcommand{\lzeroton}[1]{\lof[#1]{0}{2}{n}}
-\newcommand{\szeroton}[1]{\{\lxzeroton{#1}\}}
+\newcommand{\soneton}[1]{\qty{\loneton{#1}}}
+\newcommand{\lzeroton}[1]{\lof[#1]{0}{1}{n}}
+\newcommand{\szeroton}[1]{\qty{\lzeroton{#1}}}
 \newcommand{\loneto}[2]{\lof[#1]{1}{2}{#2}}
-\newcommand{\soneto}[2]{\{\lxoneton{#1}{#2}\}}
-\newcommand{\lzeroto}[2]{\lof[#1]{0}{2}{#2}}
-\newcommand{\szeroto}[2]{\{\lxzeroton{#1}{#2}\}}
+\newcommand{\soneto}[2]{\{\loneto{#1}{#2}\}}
+\newcommand{\lzeroto}[2]{\lof[#1]{0}{1}{#2}}
+\newcommand{\szeroto}[2]{\{\lzeroto{#1}{#2}\}}
 
 % Create a list of something. Use: \lof[x]{s1}{s2}{e}. This results in the
 % output x_{s1}, x_{s2}, \dotsc, x_{e}. See above for shortcuts.
 \def\lof{\@ifnextchar[{\@indexedlist}{\@rawlist}}
-\newcommand{\@indexedlist}[4][]{{{#1}_{#2}, {#1}_{#3}, \dotsc, {#1}_{#4}}}
-\newcommand{\@rawlist}[3]{{{#1}, {#2}, \dotsc, {#3}}}
+\def\sof{\@ifnextchar[{\@indexedset}{\@rawset}}
+\newcommand{\@indexedlist}[4][]{{#1_{#2}, #1_{#3}, \dots, #1_{#4}}}
+\newcommand{\@rawlist}[3]{{{#1}, {#2}, \dots, {#3}}}
+\newcommand{\@indexedset}[4][]{\{{#1_{#2}, #1_{#3}, \dots, #1_{#4}}\}}
+\newcommand{\@rawset}[3]{\{{{#1}, {#2}, \dots, {#3}}\}}
 
 % Upper and lower integrals
 \def\upint{\mathchoice%
