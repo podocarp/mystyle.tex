@@ -37,11 +37,12 @@
 \DeclareMathOperator{\rowspace}{rowspace}
 \DeclareMathOperator{\colspace}{colspace}
 \DeclareMathOperator{\proj}{proj}
+\DeclareMathOperator{\diag}{diag}
 
 % Algebra things
-\DeclareMathOperator{\Gal}{{\bf Gal}}
-\DeclareMathOperator{\GL}{{\bf GL}}
-\DeclareMathOperator{\SL}{{\bf SL}}
+\DeclareMathOperator{\Gal}{\bf{Gal}}
+\DeclareMathOperator{\GL}{\bf{GL}}
+\DeclareMathOperator{\SL}{\bf{SL}}
 \let\hom\relax
 \DeclareMathOperator{\aut}{Aut}
 \DeclareMathOperator{\ann}{Ann}
@@ -59,7 +60,8 @@
 % Misc things
 \DeclareMathOperator{\conv}{conv}
 \DeclareMathOperator{\val}{val}
-\DeclareMathOperator{\pr}{Pr}
+\let\pr\Pr % included in physics package
+\DeclareMathOperator{\sinc}{sinc}
 
 % Logic things
 \let\fa\forall
@@ -132,6 +134,32 @@
 \newcommand{\Xscr}{{\mathscr{X}}}
 \newcommand{\Yscr}{{\mathscr{Y}}}
 \newcommand{\Zscr}{{\mathscr{Z}}}
+\newcommand{\afrak}{{\mathfrak{A}}}
+\newcommand{\bfrak}{{\mathfrak{B}}}
+\newcommand{\cfrak}{{\mathfrak{C}}}
+\newcommand{\dfrak}{{\mathfrak{D}}}
+\newcommand{\efrak}{{\mathfrak{E}}}
+\newcommand{\ffrak}{{\mathfrak{F}}}
+\newcommand{\gfrak}{{\mathfrak{G}}}
+\newcommand{\hfrak}{{\mathfrak{H}}}
+\newcommand{\ifrak}{{\mathfrak{I}}}
+\newcommand{\jfrak}{{\mathfrak{J}}}
+\newcommand{\kfrak}{{\mathfrak{K}}}
+\newcommand{\lfrak}{{\mathfrak{L}}}
+\newcommand{\mfrak}{{\mathfrak{M}}}
+\newcommand{\nfrak}{{\mathfrak{N}}}
+\newcommand{\ofrak}{{\mathfrak{O}}}
+\newcommand{\pfrak}{{\mathfrak{P}}}
+\newcommand{\qfrak}{{\mathfrak{Q}}}
+\newcommand{\rfrak}{{\mathfrak{R}}}
+\newcommand{\sfrak}{{\mathfrak{S}}}
+\newcommand{\tfrak}{{\mathfrak{T}}}
+\newcommand{\ufrak}{{\mathfrak{U}}}
+\newcommand{\vfrak}{{\mathfrak{V}}}
+\newcommand{\wfrak}{{\mathfrak{W}}}
+\newcommand{\xfrak}{{\mathfrak{X}}}
+\newcommand{\yfrak}{{\mathfrak{Y}}}
+\newcommand{\zfrak}{{\mathfrak{Z}}}
 \newcommand{\Afrak}{{\mathfrak{A}}}
 \newcommand{\Bfrak}{{\mathfrak{B}}}
 \newcommand{\Cfrak}{{\mathfrak{C}}}
@@ -175,9 +203,10 @@
 %%%%% Greek letters
 % Those commented out are too short and also they start with the same alphabet.
 
-\let\ggt\gg{}
+\let\ggt\gg
 \let\gg\relax
 \let\ge\relax
+\let\llt\ll
 \newcommand{\ga}{{\alpha}}
 \newcommand{\gb}{{\beta}}
 \newcommand{\gg}{{\gamma}}
@@ -235,6 +264,10 @@
 \newcommand{\intinfzero}{{\int_{-\infty}^0}}
 \newcommand{\intzeroinf}{{\int_0^\infty}}
 \newcommand{\intzeroone}{{\int_0^1}}
+\newcommand{\intzeropi}{{\int_0^\pi}}
+\newcommand{\intzerotwopi}{{\int_0^{2\pi}}}
+\newcommand{\intoneone}{{\int_{-1}^1}}
+\newcommand{\intoneinf}{{\int_1^\infty}}
 \newcommand{\intpipi}{{\int_{-\pi}^{\pi}}}
 
 % Nice convenient partial derivative macros
@@ -250,6 +283,11 @@
 % \def\lc_#1{\limits_{\mathclap{#1}}}
 % Limits with mathclap and substack
 \def\lc_#1{\limits_{\mathclap{\substack{#1}}}}
+
+\newcommand{\limtoinf}[1]{{\lim_{{#1} \to \infty}}}
+\newcommand{\limntoinf}[1]{{\lim_{n \to \infty}}}
+\newcommand{\limtozero}[1]{{\lim_{{#1} \to 0}}}
+\newcommand{\limntozero}[1]{{\lim_{n \to 0}}}
 
 % Nice convenient infinite sums
 \newcommand{\sumzeroinf}[1]{{\sum_{{#1}=0}^\infty}}
@@ -316,3 +354,11 @@
 \DeclareMathOperator{\gives}{{\rightarrow}}
 
 \newcommand\dash{\text{--}}
+
+% Ricci curvature in terms of Christoffel symbols
+\newcommand\riccichris[2]{%
+    \pdv{\Gg^\gg_{#1#2}}{x^\gg}
+    - \pdv{\Gg^\gg_{#1\gg}}{x^#2}
+    + \Gg^\gg_{#1#2} \Gg^\gd_{\gg\gd}
+    - \Gg^{\gg}_{#1\gd} \Gg^\gd_{#2\gg}%
+}
