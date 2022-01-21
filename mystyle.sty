@@ -14,17 +14,18 @@
 
 % Graphics
 \usepackage{float}
-\usepackage{subcaption}
 \usepackage{graphicx}
 \usepackage{import}
-\usepackage{wrapfig}
+\usepackage{multirow}
+\usepackage{pgfplots}
+\usepackage[section]{placeins} % provides FloatBarrier
+\usepackage{subcaption}
 \PassOptionsToPackage{dvipsnames}{xcolor}
 \usepackage{tikz}
 \usetikzlibrary{arrows, automata, calc, cd, external, positioning}
-\usepackage{pgfplots}
 \usepgfplotslibrary{external}
 \pgfplotsset{compat=newest}
-\usepackage{multirow}
+\usepackage{wrapfig}
 
 \tikzexternalize[prefix=figures/]
 \tikzstyle{rect} = [rectangle, draw, text centered, minimum width=50]
@@ -73,8 +74,7 @@
 
 \newcommand{\sectionbreak}{\begin{center}***\end{center}}
 
-\let\temp\textvisiblespace{}
-\renewcommand{\textvisiblespace}{\text{\temp}}
+\newcommand{\visiblespace}{\text{\textvisiblespace}}
 
 % Table things
 \newcolumntype{L}{>{$}l<{$}} % math-mode versions
@@ -95,6 +95,7 @@
     \setbeamerfont{itemize/enumerate subbody}{size=\small}
     \setbeamerfont{itemize/enumerate subitem}{size=\small}
     \setbeamerfont{footnote}{size=\tiny}
+    \setbeamerfont{caption}{size=\scriptsize}
 
     \setbeamertemplate{itemize item}[circle]
     \setbeamertemplate{enumerate items}[circle]

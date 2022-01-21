@@ -19,6 +19,12 @@
 \newcommand{\vzero}{{\vb{0}}}
 \newcommand{\vn}{{\vunit{n}}}
 
+\newcommand{\hU}{{\hat{U}}}
+\newcommand{\hx}{{\hat{x}}}
+\newcommand{\hp}{{\hat{p}}}
+\newcommand{\hUd}{{\hat{U}^{\dagger}}}
+\newcommand{\hH}{{\hat{H}}}
+
 % Generic things
 \DeclareMathOperator{\coker}{coker}
 \DeclareMathOperator{\dom}{dom}
@@ -27,6 +33,7 @@
 \DeclareMathOperator{\ker}{ker}
 \DeclareMathOperator{\img}{img}
 \DeclareMathOperator{\seq}{seq}
+\DeclareMathOperator{\Arg}{Arg}
 
 % Linear algebra things
 \DeclareMathOperator{\adj}{adj}
@@ -66,6 +73,15 @@
 % Logic things
 \let\fa\forall
 \let\e\exists
+
+% Stats things
+\DeclareMathOperator{\E}{E}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Bin}{Bin}
+\DeclareMathOperator{\Po}{Po}
+\DeclareMathOperator{\Exp}{Exp}
+\DeclareMathOperator{\Norm}{N}
 
 %%%%% Script and calligraphy letters
 
@@ -212,6 +228,7 @@
 \newcommand{\gg}{{\gamma}}
 \newcommand{\gd}{{\delta}}
 \newcommand{\ge}{{\epsilon}}
+\newcommand{\gve}{{\varepsilon}}
 \newcommand{\gz}{{\zeta}}
 % \newcommand{\get}{{\eta}}
 \newcommand{\gt}{{\theta}}
@@ -228,8 +245,10 @@
 % \newcommand{\gt}{{\tau}}
 \newcommand{\gy}{{\upsilon}}
 % \newcommand{\gp}{{\phi}}
+\newcommand{\vphi}{{\varphi}}
 % \newcommand{\gc}{{\chi}}
 % \newcommand{\gps}{{\psi}}
+\newcommand{\vpsi}{{\varpsi}}
 \newcommand{\go}{{\omega}}
 
 \newcommand{\Ga}{{\Alpha}}
@@ -347,11 +366,10 @@
 \newcommand{\?}{\stackrel{?}{=}}
 \newcommand{\dotminus}{\mathbin{\dot{\smash{-}}}}
 \newcommand{\x}{\times}
-
-% For grammars, to make it more readable.
-\DeclareMathOperator{\produce}{{\Rightarrow}}
-\DeclareMathOperator{\produces}{{\Rightarrow^*}}
-\DeclareMathOperator{\gives}{{\rightarrow}}
+\newcommand{\h}{\hat}
+\newcommand{\ti}{\tilde}
+\newcommand{\up}{\uparrow}
+\newcommand{\down}{\downarrow}
 
 \newcommand\dash{\text{--}}
 
