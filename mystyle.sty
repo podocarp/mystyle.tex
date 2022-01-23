@@ -6,11 +6,16 @@
     prefix=fam@
 }
 
+% enables some beamer specific stuff.
 \DeclareBoolOption[false]{beamermode}
+% handout mode for beamer.
 \DeclareBoolOption[false]{notes}
+% swaps var and non var versions of greek letters.
 \DeclareBoolOption[false]{varepsilon}
 \DeclareBoolOption[false]{varphi}
 \DeclareBoolOption[false]{varpsi}
+% makes all vectors bold. maps \vec to \vb.
+\DeclareBoolOption[false]{boldvectors}
 
 % Graphics
 \usepackage{float}
@@ -36,7 +41,7 @@
 
 % Physics stuff
 \usepackage{physics}
-\usepackage{siunitx}
+\usepackage{siunitx}[=v2]
 
 % Math stuff
 \usepackage{amssymb, amsmath, amsthm, mathtools}
@@ -138,4 +143,7 @@
     \let\temp\psi{}
     \let\psi\varpsi{}
     \let\varpsi\temp{}
+\fi
+\iffam@boldvectors
+    \let\vec\vb
 \fi
