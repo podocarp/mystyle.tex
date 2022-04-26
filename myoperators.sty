@@ -13,6 +13,7 @@
 
 \let\vunit\vu % original was for unit vectors
 \let\vu\relax
+\newcommand{\vga}{{\vb*{\ga}}}
 \newcommand{\ve}{{\vb{e}}}
 \newcommand{\vu}{{\vb{u}}}
 \newcommand{\vv}{{\vb{v}}}
@@ -308,9 +309,9 @@
 \def\lc_#1{\limits_{\mathclap{\substack{#1}}}}
 
 \newcommand{\limtoinf}[1]{{\lim_{{#1} \to \infty}}}
-\newcommand{\limntoinf}[1]{{\lim_{n \to \infty}}}
+\newcommand{\limntoinf}{{\lim_{n \to \infty}}}
 \newcommand{\limtozero}[1]{{\lim_{{#1} \to 0}}}
-\newcommand{\limntozero}[1]{{\lim_{n \to 0}}}
+\newcommand{\limntozero}{{\lim_{n \to 0}}}
 
 % Nice convenient infinite sums
 \newcommand{\sumzeroinf}[1]{{\sum_{{#1}=0}^\infty}}
@@ -384,3 +385,5 @@
     + \Gg^\gg_{#1#2} \Gg^\gd_{\gg\gd}
     - \Gg^{\gg}_{#1\gd} \Gg^\gd_{#2\gg}%
 }
+
+\DeclareSIUnit\calorie{cal}
