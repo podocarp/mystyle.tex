@@ -31,7 +31,6 @@
 \usepgfplotslibrary{external}
 \pgfplotsset{compat=newest}
 \usepackage{wrapfig}
-\pdfsuppresswarningpagegroup=1
 
 \tikzexternalize[prefix=figures/]
 \tikzstyle{rect} = [rectangle, draw, text centered, minimum width=50]
@@ -54,9 +53,6 @@
 \usepackage{esint}
 \usepackage{prftree}
 
-% Custom operators. This overwrites some symbols in other packages.
-\usepackage{myoperators}
-
 % CS stuff
 \usepackage[linesnumbered,ruled,vlined,algosection]{algorithm2e}
 \SetKwProg{Fn}{function}{:}{}
@@ -70,8 +66,14 @@
 \hypersetup{colorlinks=true, linkcolor=blue, urlcolor=teal}
 \usepackage[makeroom, Smaller]{cancel}
 \usepackage{relsize}
-% \usepackage[kerning=true, tracking=true]{microtype}
 \usepackage{tabularx}
+\usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
+\usepackage[math=+ss08]{libertinus-otf}
+\setmathfont[range=\mathbb]{texgyrepagella-math.otf}
+
+% Custom operators. This overwrites some symbols in other packages.
+\usepackage{myoperators}
+
 % Sizes
 \let\labelitemi\undefined{}
 \newcommand\labelitemi{\raisebox{0.25ex}{\tiny$\bullet$}}

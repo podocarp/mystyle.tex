@@ -38,11 +38,16 @@
 \DeclareMathOperator{\seq}{seq}
 \DeclareMathOperator{\Arg}{Arg}
 \DeclareMathOperator{\Log}{Log}
+\let\Res\relax
+\DeclareMathOperator*{\Res}{Res}
 \DeclareMathOperator{\conv}{conv}
 \DeclareMathOperator{\val}{val}
 \DeclareMathOperator*{\argmax}{argmax}
 \DeclareMathOperator*{\argmin}{argmin}
 \DeclareMathOperator{\sinc}{sinc}
+\newcommand{\sm}{\smallsetminus}
+\let\pv\relax
+\DeclareMathOperator{\pv}{\te{p.v.}}
 
 % Linear algebra things
 \DeclareMathOperator{\adj}{adj}
@@ -69,13 +74,12 @@
 \DeclareMathOperator{\mor}{Mor}
 \DeclareMathOperator{\out}{Out}
 \DeclareMathOperator{\tor}{Tor}
-
 \newcommand{\sub}{\mathbf{Sub}}
 \newcommand{\set}{{\mathbf{Set}}}
 
 % Logic things
-\let\fa\forall
-\let\e\exists
+\newcommand{\fa}{\forall}
+\newcommand{\e}{\exists}
 
 % Stats things
 \DeclareMathOperator{\E}{E}
@@ -222,12 +226,14 @@
 \newcommand{\LTi}[1]{{\mathcal{L}^{-1}\qty{#1}}}
 
 %%%%% Greek letters
-% Those commented out are too short and also they start with the same alphabet.
-
+% This has to be AtBeginEnvironment due to the unicode-math package.
+\AtBeginDocument{
 \let\ggt\gg
 \let\gg\relax
 \let\ge\relax
+\let\Gt\relax
 \let\llt\ll
+\let\ll\relax
 \newcommand{\ga}{{\alpha}}
 \newcommand{\gb}{{\beta}}
 \newcommand{\gg}{{\gamma}}
@@ -235,24 +241,14 @@
 \newcommand{\ge}{{\epsilon}}
 \newcommand{\gve}{{\varepsilon}}
 \newcommand{\gz}{{\zeta}}
-% \newcommand{\get}{{\eta}}
 \newcommand{\gt}{{\theta}}
 \newcommand{\gi}{{\iota}}
 \newcommand{\gk}{{\kappa}}
 \newcommand{\gl}{{\lambda}}
-% \newcommand{\gm}{{\mu}}
-% \newcommand{\gn}{{\nu}}
-% \newcommand{\gx}{{\xi}}
 \newcommand{\gom}{{\omicron}}
-% \newcommand{\gpi}{{\pi}}
-% \newcommand{\gr}{{\rho}}
 \newcommand{\gs}{{\sigma}}
-% \newcommand{\gt}{{\tau}}
 \newcommand{\gy}{{\upsilon}}
-% \newcommand{\gp}{{\phi}}
 \newcommand{\vphi}{{\varphi}}
-% \newcommand{\gc}{{\chi}}
-% \newcommand{\gps}{{\psi}}
 \newcommand{\vpsi}{{\varpsi}}
 \newcommand{\go}{{\omega}}
 
@@ -262,24 +258,15 @@
 \newcommand{\Gd}{{\Delta}}
 \newcommand{\Ge}{{\Epsilon}}
 \newcommand{\Gz}{{\Zeta}}
-% \newcommand{\Get}{{\Eta}}
 \newcommand{\Gt}{{\Theta}}
 \newcommand{\Gi}{{\Iota}}
 \newcommand{\Gk}{{\Kappa}}
 \newcommand{\Gl}{{\Lambda}}
-% \newcommand{\Gm}{{\Mu}}
-% \newcommand{\Gn}{{\Nu}}
-% \newcommand{\Gx}{{\Xi}}
 \newcommand{\Gom}{{\Omicron}}
-% \newcommand{\Gpi}{{\Pi}}
-% \newcommand{\Gr}{{\Rho}}
 \newcommand{\Gs}{{\Sigma}}
-% \newcommand{\Gt}{{\Tau}}
 \newcommand{\Gy}{{\Upsilon}}
-% \newcommand{\Gp}{{\Phi}}
-% \newcommand{\Gc}{{\Chi}}
-% \newcommand{\Gps}{{\Psi}}
 \newcommand{\Go}{{\Omega}}
+}
 
 %%%%%
 
@@ -302,12 +289,10 @@
 \newcommand{\pdvqm}[3]{{{\qty(-\pdv{#1}{#2})}_{#3}}}
 \newcommand{\qdv}[2]{{\qty(\pdv{#1}{#2})}}
 
-% Limits with mathclap (only useful for limits under summations for eg. so it
-% does not support superscripts.)
-% \def\lc_#1{\limits_{\mathclap{#1}}}
 % Limits with mathclap and substack
-\def\lc_#1{\limits_{\mathclap{\substack{#1}}}}
+\newcommand{\lc}[1]{\limits_{\mathclap{\substack{#1}}}}
 
+\newcommand{\limto}[2]{{\lim_{{#1} \to {#2}}}}
 \newcommand{\limtoinf}[1]{{\lim_{{#1} \to \infty}}}
 \newcommand{\limntoinf}{{\lim_{n \to \infty}}}
 \newcommand{\limtozero}[1]{{\lim_{{#1} \to 0}}}
@@ -315,8 +300,11 @@
 
 % Nice convenient infinite sums
 \newcommand{\sumzeroinf}[1]{{\sum_{{#1}=0}^\infty}}
+\newcommand{\sumnzeroinf}{{\sum_{n=0}^\infty}}
 \newcommand{\sumoneinf}[1]{{\sum_{{#1}=1}^\infty}}
+\newcommand{\sumnoneinf}{{\sum_{n=1}^\infty}}
 \newcommand{\suminfinf}[1]{{\sum_{{#1}=-\infty}^\infty}}
+\newcommand{\sumninfinf}{{\sum_{n=\infty}^\infty}}
 \newcommand{\sumzeroto}[2]{{\sum_{{#1}=0}^{#2}}}
 \newcommand{\sumoneto}[2]{{\sum_{{#1}=1}^{#2}}}
 
